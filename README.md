@@ -21,6 +21,6 @@ convolutional networks can be substantially deeper, more accurate, and efficient
 
 ## Recurrent Neural Networks
 
-
+Recurrent neural networks, or RNNs, are a family of neural networks for processing sequential data. Much as a convolutional network is a neural network that is specialized for processing a grid of values X such as an image, a recurrent neural network is a neural network that is specialized for processing a sequence of values x(1), . . . , x(τ). Recurrent networks can scale to much longer sequences than would be practical for networks without sequence-based specialization. Most recurrent networks can also process sequences of variable length. RNNs can be seen as the basic building blocks of language models. The RNNs are also known to suffer from the problems of vanishing gradients, exploding gradients and long-term dependencies. Hence various methods have been developed such as LSTM, GRU, FastRNN, FastGRNN, etc. In the current language models, attention mechanism is added to enhance the ability of the model to focus on a certain region, semantics, etc. A simple RNN implementation is illustrated in [Rcurrent Neural Networks](https://github.com/nishad-pawaskar/Deep-Learning/tree/f18592dd22971e15ffeb9268bc7f449c9d4023d7/Recurrent%20Neural%20Networks) whereas Language models with GRU is illustrated in [RNN with variable length sequences](https://github.com/nishad-pawaskar/Deep-Learning/tree/f18592dd22971e15ffeb9268bc7f449c9d4023d7/RNN_variableLength_Sequence).
 
 =========
