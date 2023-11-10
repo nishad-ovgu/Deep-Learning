@@ -14,4 +14,13 @@ Five simple MLP training scripts for MNIST were provided, which fail at training
 
 Convolutional networks, also known as Convolutional Neural Networks, or CNNs, are a specialized kind of neural network for processing data that has a known grid-like topology. Convolutional networks have been tremendously successful in practical applications. The name “convolutional neural network” indicates that the network employs a mathematical operation called convolution. Convolution is a specialized kind of linear operation. Convolutional networks are simply neural networks that use convolution in place of general matrix multiplication in at least one of their layers. The basic MLP programmed in [Deep MLP Model](https://github.com/nishad-pawaskar/Deep-Learning/tree/d603ad441c0e94befffdb7f4c5d29753e875e9d9/MNIST_Deep_Model) was modified by adding convolutional layers before the dense MLP layer for classification. These convolutional layers help in extracting and learning features using the convolutional kernel from the dataset. [Convolutional Neural Network (CNN)](https://github.com/nishad-pawaskar/Deep-Learning/tree/d603ad441c0e94befffdb7f4c5d29753e875e9d9/Convolutional%20Nueral%20Networks) trains the CNN model for classifying the FashionMNIST and CIFAR10 dataset.
 
+## DenseNet
+
+convolutional networks can be substantially deeper, more accurate, and efficient to train if they contain shorter connections between layers close to the input and those close to the output. The Dense Convolutional Network (DenseNet), which connects each layer to every other layer in a feed-forward fashion. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers. To build a DenseNet, a convolutional block is created, the input and output of which is concatenated to give the output of the corresponding layer, thus forming a [Dense Convolutional Network](https://github.com/nishad-pawaskar/Deep-Learning/tree/9dc3fa9b2620eafbb0d11112af11008859d2f0ba/DenseNets). The program also includes a graph-based execution of the conventional CNN using tf.function. 
+
+
+## Recurrent Neural Networks
+
+
+
 =========
