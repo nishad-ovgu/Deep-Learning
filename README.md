@@ -26,12 +26,27 @@ Recurrent neural networks, or RNNs, are a family of neural networks for processi
 ## Autoencoders
 
 Autoencoders are an unsupervised learning technique in which we leverage neural networks for the task of representation learning. Specifically, we'll design a neural network architecture such that we impose a bottleneck in the network which forces a compressed knowledge representation of the original input. In other words, an autoencoder is a neural network that is trained to attempt to copy its input to its output. The network consists of two parts - an encoder function and a decoder function that produces a reconstruction. In order to build an autoencoder, you need to define an encoding based on the input, a decoding based on the encoding, and a loss function that measures the distance between decoding and input. Note that you are in no way obligated to choose the “reverse” encoder architecture for your decoder; i.e. you could use a 10-layer MLP as an encoder and a single layer as a decoder if you wanted, or the filter sizes need not be same in case of convolutional autoencoder. The [autoencoder](https://github.com/nishad-pawaskar/Deep-Learning/tree/b14a752bd8dfe258d852dfc796223896c00f4327/Autoencoders) program consists of a Convolutional autoencoder which works with image data, and unsupervised pretraining approach such as - 
-* Train autoencoder – freeze encoder – train classifier on top.
+- Train autoencoder – freeze encoder – train classifier on top.
 - Train autoencoder – train classifier on top of encoder. Do not freeze the encoder, i.e. the encoder is “fine-tuned” on the labeled subset of data as well.
 - Train a classifier directly on the labeled subset; no pretraining. For fairness, it should have the same architecture as the encoder + classifier above.
 
 ## Data Validation
 
+The dataset archive contains triplets of training, validation and test sets. For each, a model is trained on the training set, making sure it “works” by checking its performance on the validation set. The models were then fine-tuned to achieve as good of a validation set performance as possible, and the performance on the test set was checked whether the performance on the test set was close to that on the validation set. For each triplet, through inspection or computing statistics of the dataset it was found out what was going wrong. Typical things to look out for which decreases the test accuracy include:
+
+- Do the train, validation and test sets follow the same distribution?
+- Are the different subsets disjunct?
+- Are the sets balanced?
+- Were the sets processed in the same way?
+
+The corresponding program is given in [Data Validation](https://github.com/nishad-pawaskar/Deep-Learning/tree/0113b8072dbcd6c10a042dbb6a771e406272af3a/Data%20Validation). 
+
 ## Adversarial Examples
 
-=========
+A central problem in machine learning is how to make an algorithm that will perform well not just on the training data, but also on new inputs. Many strategies used in machine 
+learning are explicitly designed to reduce the test error, possibly at the expense of increased training error. These strategies are known collectively as regularization. In 
+[Adversarial examples]() we will explore the phenomenon of adversarial examples and how to defend against them. The adversarial examples are split into two parts - Creating 
+Adversarial examples and Adversarial training. In order to create adversarial examples, the input is changed such that the loss is increased. This type of adversarial phenomenon is 
+known as "_untargeted attack_" where we simply increase the loss, no matter what. Another type is the "_targeted attack_" where the goal is to make the network misclassify an input in a specific way – e.g. classify every MNIST digit as a 3. Adding the gradients to the inputs will give a batch of adversarial examples. These gradients are multiplied with a small constant such that the inputs aren't changed too much. 
+
+In order to defend against such adversarial attacks, a defense method known as "_Adversarial Training_" is employed, where the models are explicitly trained to classify the adversarial examples correctly. This is done by integrating adversarial examples in the training batch at each step.
