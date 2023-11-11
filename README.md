@@ -18,6 +18,11 @@ Convolutional networks, also known as Convolutional Neural Networks, or CNNs, ar
 
 convolutional networks can be substantially deeper, more accurate, and efficient to train if they contain shorter connections between layers close to the input and those close to the output. The Dense Convolutional Network (DenseNet), which connects each layer to every other layer in a feed-forward fashion. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers. To build a DenseNet, a convolutional block is created, the input and output of which is concatenated to give the output of the corresponding layer, thus forming a [Dense Convolutional Network](https://github.com/nishad-pawaskar/Deep-Learning/tree/9dc3fa9b2620eafbb0d11112af11008859d2f0ba/DenseNets). The program also includes a graph-based execution of the conventional CNN using tf.function. 
 
+## Residual Network
+
+When deeper networks are able to start converging, a degradation problem has been exposed: with the network depth increasing, accuracy gets saturated and then degrades rapidly. Unexpectedly, such degradation is not caused by overfitting, and adding more layers to a suitably deep model leads to higher training error. The degradation problem was addressed by
+introducing a deep residual learning framework. Instead of hoping each few stacked layers directly fit a desired underlying mapping, we explicitly let these layers fit a residual mapping. Formally, denoting the desired underlying mapping as H(x), we let the stacked non-linear layers fit another mapping of F(x) := H(x)−x. The original mapping is thus recast into F(x)+x. The [Residual Network]() implements a ResNet18 architecture consisting of 18 residual convolutional layers.
+
 
 ## Recurrent Neural Networks
 
@@ -45,7 +50,7 @@ The corresponding program is given in [Data Validation](https://github.com/nisha
 
 A central problem in machine learning is how to make an algorithm that will perform well not just on the training data, but also on new inputs. Many strategies used in machine 
 learning are explicitly designed to reduce the test error, possibly at the expense of increased training error. These strategies are known collectively as regularization. In 
-[Adversarial examples]() we will explore the phenomenon of adversarial examples and how to defend against them. The adversarial examples are split into two parts - Creating 
+[Adversarial examples](https://github.com/nishad-pawaskar/Deep-Learning/tree/eae23be236d1cb9fe98639ca812510e986980cda/Adversarial%20Examples) we will explore the phenomenon of adversarial examples and how to defend against them. The adversarial examples are split into two parts - Creating 
 Adversarial examples and Adversarial training. In order to create adversarial examples, the input is changed such that the loss is increased. This type of adversarial phenomenon is 
 known as "_untargeted attack_" where we simply increase the loss, no matter what. Another type is the "_targeted attack_" where the goal is to make the network misclassify an input in a specific way – e.g. classify every MNIST digit as a 3. Adding the gradients to the inputs will give a batch of adversarial examples. These gradients are multiplied with a small constant such that the inputs aren't changed too much. 
 
