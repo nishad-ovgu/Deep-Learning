@@ -21,7 +21,7 @@ convolutional networks can be substantially deeper, more accurate, and efficient
 ## Residual Network
 
 When deeper networks are able to start converging, a degradation problem has been exposed: with the network depth increasing, accuracy gets saturated and then degrades rapidly. Unexpectedly, such degradation is not caused by overfitting, and adding more layers to a suitably deep model leads to higher training error. The degradation problem was addressed by
-introducing a deep residual learning framework. Instead of hoping each few stacked layers directly fit a desired underlying mapping, we explicitly let these layers fit a residual mapping. Formally, denoting the desired underlying mapping as H(x), we let the stacked non-linear layers fit another mapping of F(x) := H(x)−x. The original mapping is thus recast into F(x)+x. The [Residual Network]() implements a ResNet18 architecture consisting of 18 residual convolutional layers.
+introducing a deep residual learning framework. Instead of hoping each few stacked layers directly fit a desired underlying mapping, we explicitly let these layers fit a residual mapping. Formally, denoting the desired underlying mapping as H(x), we let the stacked non-linear layers fit another mapping of F(x) := H(x)−x. The original mapping is thus recast into F(x)+x. The [Residual Network](https://github.com/nishad-pawaskar/Deep-Learning/tree/9aa0f8a3eb15fb8aa4230a5a4ea257e493b3fc93/Residual%20Network) implements a ResNet18 architecture consisting of 18 residual convolutional layers.
 
 
 ## Recurrent Neural Networks
