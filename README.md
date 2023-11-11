@@ -23,4 +23,15 @@ convolutional networks can be substantially deeper, more accurate, and efficient
 
 Recurrent neural networks, or RNNs, are a family of neural networks for processing sequential data. Much as a convolutional network is a neural network that is specialized for processing a grid of values X such as an image, a recurrent neural network is a neural network that is specialized for processing a sequence of values x(1), . . . , x(τ). Recurrent networks can scale to much longer sequences than would be practical for networks without sequence-based specialization. Most recurrent networks can also process sequences of variable length. RNNs can be seen as the basic building blocks of language models. The RNNs are also known to suffer from the problems of vanishing gradients, exploding gradients and long-term dependencies. Hence various methods have been developed such as LSTM, GRU, FastRNN, FastGRNN, etc. In the current language models, attention mechanism is added to enhance the ability of the model to focus on a certain region, semantics, etc. A simple RNN implementation is illustrated in [Rcurrent Neural Networks](https://github.com/nishad-pawaskar/Deep-Learning/tree/f18592dd22971e15ffeb9268bc7f449c9d4023d7/Recurrent%20Neural%20Networks) whereas Language models with GRU is illustrated in [RNN with variable length sequences](https://github.com/nishad-pawaskar/Deep-Learning/tree/f18592dd22971e15ffeb9268bc7f449c9d4023d7/RNN_variableLength_Sequence).
 
+## Autoencoders
+
+Autoencoders are an unsupervised learning technique in which we leverage neural networks for the task of representation learning. Specifically, we'll design a neural network architecture such that we impose a bottleneck in the network which forces a compressed knowledge representation of the original input. In other words, an autoencoder is a neural network that is trained to attempt to copy its input to its output. The network consists of two parts - an encoder function and a decoder function that produces a reconstruction. In order to build an autoencoder, you need to define an encoding based on the input, a decoding based on the encoding, and a loss function that measures the distance between decoding and input. Note that you are in no way obligated to choose the “reverse” encoder architecture for your decoder; i.e. you could use a 10-layer MLP as an encoder and a single layer as a decoder if you wanted, or the filter sizes need not be same in case of convolutional autoencoder. The [autoencoder](https://github.com/nishad-pawaskar/Deep-Learning/tree/b14a752bd8dfe258d852dfc796223896c00f4327/Autoencoders) program consists of a Convolutional autoencoder which works with image data, and unsupervised pretraining approach such as - 
+- Train autoencoder – freeze encoder – train classifier on top.
+- Train autoencoder – train classifier on top of encoder. Do not freeze the encoder, i.e. the encoder is “fine-tuned” on the labeled subset of data as well.
+- Train a classifier directly on the labeled subset; no pretraining. For fairness, it should have the same architecture as the encoder + classifier above.
+
+## Data Validation
+
+## Adversarial Examples
+
 =========
